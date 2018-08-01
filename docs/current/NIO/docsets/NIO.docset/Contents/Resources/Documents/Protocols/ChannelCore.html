@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           NIO Docs
         </a>
-         (89% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -100,6 +100,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/NIONetworkInterface.html">NIONetworkInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RepeatedTask.html">RepeatedTask</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ServerBootstrap.html">ServerBootstrap</a>
@@ -323,10 +326,19 @@
                 <a class="nav-group-task-link" href="../Structs/ByteBufferAllocator.html">ByteBufferAllocator</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ByteBufferView.html">ByteBufferView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/ChannelOptions.html">ChannelOptions</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ChannelShouldQuiesceEvent.html">ChannelShouldQuiesceEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/CircularBuffer.html">CircularBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EventLoopIterator.html">EventLoopIterator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/EventLoopPromise.html">EventLoopPromise</a>
@@ -1092,6 +1104,60 @@ NIO&rsquo;s own <code><a href="../Enums/IOData.html">IOData</a></code>, which wi
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO11ChannelCorePAAE14removeHandlersyAA0B0_p7channel_tF"></a>
+                    <a name="//apple_ref/swift/Method/removeHandlers(channel:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO11ChannelCorePAAE14removeHandlersyAA0B0_p7channel_tF">removeHandlers(channel:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes the <code><a href="../Protocols/ChannelHandler.html">ChannelHandler</a></code>s from the <code><a href="../Classes/ChannelPipeline.html">ChannelPipeline</a></code> belonging to <code>channel</code>, and
+closes that <code><a href="../Classes/ChannelPipeline.html">ChannelPipeline</a></code>.</p>
+
+<p>This method is intended for use when writing custom <code>ChannelCore</code> implementations.
+This can be called from <code>close0</code> to tear down the <code><a href="../Classes/ChannelPipeline.html">ChannelPipeline</a></code> when closure is
+complete.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeHandlers</span><span class="p">(</span><span class="nv">channel</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Channel.html">Channel</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>channel</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Protocols/Channel.html">Channel</a></code> whose <code><a href="../Classes/ChannelPipeline.html">ChannelPipeline</a></code> will be closed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -1100,7 +1166,7 @@ NIO&rsquo;s own <code><a href="../Enums/IOData.html">IOData</a></code>, which wi
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-07-03)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-01)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

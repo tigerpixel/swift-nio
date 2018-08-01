@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           NIO Docs
         </a>
-         (89% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -100,6 +100,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/NIONetworkInterface.html">NIONetworkInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RepeatedTask.html">RepeatedTask</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ServerBootstrap.html">ServerBootstrap</a>
@@ -323,10 +326,19 @@
                 <a class="nav-group-task-link" href="../Structs/ByteBufferAllocator.html">ByteBufferAllocator</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ByteBufferView.html">ByteBufferView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/ChannelOptions.html">ChannelOptions</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ChannelShouldQuiesceEvent.html">ChannelShouldQuiesceEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/CircularBuffer.html">CircularBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EventLoopIterator.html">EventLoopIterator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/EventLoopPromise.html">EventLoopPromise</a>
@@ -427,7 +439,7 @@ For a better understanding of how such an <code>EventLoop</code> works internall
 <span class="p">}</span>
 </code></pre>
 
-<p>Because an <code>EventLoop</code> may be shared between multiple <code><a href="../Protocols/Channel.html">Channel</a></code>s its important to <em>NOT</em> block while processing IO / tasks. This also includes long running computations which will have the same
+<p>Because an <code>EventLoop</code> may be shared between multiple <code><a href="../Protocols/Channel.html">Channel</a></code>s it&rsquo;s important to <em>NOT</em> block while processing IO / tasks. This also includes long running computations which will have the same
 effect as blocking in this case.</p>
 
           </div>
@@ -710,7 +722,7 @@ effect as blocking in this case.</p>
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>a failed <code><a href="../Classes/EventLoopFuture.html">EventLoopFuture</a></code>.</p>
+                        <p>a succeeded <code><a href="../Classes/EventLoopFuture.html">EventLoopFuture</a></code>.</p>
                       </div>
                     </section>
                   </div>
@@ -774,6 +786,201 @@ effect as blocking in this case.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO9EventLoopPAAE20scheduleRepeatedTaskAA0eF0CAA10TimeAmountV12initialDelay_AH5delayyAFKctF"></a>
+                    <a name="//apple_ref/swift/Method/scheduleRepeatedTask(initialDelay:delay:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO9EventLoopPAAE20scheduleRepeatedTaskAA0eF0CAA10TimeAmountV12initialDelay_AH5delayyAFKctF">scheduleRepeatedTask(initialDelay:delay:_:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Schedule a repeated task to be executed by the <code>EventLoop</code> with a fixed delay between the end and start of each task.</p>
+
+<ul>
+<li>return: <code><a href="../Classes/RepeatedTask.html">RepeatedTask</a></code></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">scheduleRepeatedTask</span><span class="p">(</span><span class="nv">initialDelay</span><span class="p">:</span> <span class="kt"><a href="../Structs/TimeAmount.html">TimeAmount</a></span><span class="p">,</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt"><a href="../Structs/TimeAmount.html">TimeAmount</a></span><span class="p">,</span> <span class="n">_</span> <span class="nv">task</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/RepeatedTask.html">RepeatedTask</a></span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RepeatedTask.html">RepeatedTask</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>initialDelay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The delay after which the first task is executed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The delay between the end of one task and the start of the next.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>task</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure that will be executed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO9EventLoopPAAE20scheduleRepeatedTaskAA0eF0CAA10TimeAmountV12initialDelay_AH5delayAA0bC6FutureCyytGAFctF"></a>
+                    <a name="//apple_ref/swift/Method/scheduleRepeatedTask(initialDelay:delay:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO9EventLoopPAAE20scheduleRepeatedTaskAA0eF0CAA10TimeAmountV12initialDelay_AH5delayAA0bC6FutureCyytGAFctF">scheduleRepeatedTask(initialDelay:delay:_:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Schedule a repeated task to be executed by the <code>EventLoop</code> with a fixed delay between the end and start of each task.</p>
+
+<ul>
+<li>return: <code><a href="../Classes/RepeatedTask.html">RepeatedTask</a></code></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@discardableResult</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">scheduleRepeatedTask</span><span class="p">(</span><span class="nv">initialDelay</span><span class="p">:</span> <span class="kt"><a href="../Structs/TimeAmount.html">TimeAmount</a></span><span class="p">,</span> <span class="nv">delay</span><span class="p">:</span> <span class="kt"><a href="../Structs/TimeAmount.html">TimeAmount</a></span><span class="p">,</span> <span class="n">_</span> <span class="nv">task</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Classes/RepeatedTask.html">RepeatedTask</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/EventLoopFuture.html">EventLoopFuture</a></span><span class="o">&lt;</span><span class="kt">Void</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RepeatedTask.html">RepeatedTask</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>initialDelay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The delay after which the first task is executed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>delay</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The delay between the end of one task and the start of the next.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>task</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The closure that will be executed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO9EventLoopPAAE12makeIteratorAA0bcE0VSgyF"></a>
+                    <a name="//apple_ref/swift/Method/makeIterator()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO9EventLoopPAAE12makeIteratorAA0bcE0VSgyF">makeIterator()</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns an <code><a href="../Structs/EventLoopIterator.html">EventLoopIterator</a></code> over this <code>EventLoop</code>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The return value of <code>makeIterator</code> is currently optional as requiring it would be SemVer major. From NIO 2.0.0 on it will return a non-optional iterator.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">makeIterator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/EventLoopIterator.html">EventLoopIterator</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code><a href="../Structs/EventLoopIterator.html">EventLoopIterator</a></code></p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -782,7 +989,7 @@ effect as blocking in this case.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-07-03)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-01)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

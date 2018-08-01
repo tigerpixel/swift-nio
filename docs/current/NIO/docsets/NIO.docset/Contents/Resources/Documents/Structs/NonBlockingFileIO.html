@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           NIO Docs
         </a>
-         (89% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -100,6 +100,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/NIONetworkInterface.html">NIONetworkInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RepeatedTask.html">RepeatedTask</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ServerBootstrap.html">ServerBootstrap</a>
@@ -323,10 +326,19 @@
                 <a class="nav-group-task-link" href="../Structs/ByteBufferAllocator.html">ByteBufferAllocator</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ByteBufferView.html">ByteBufferView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/ChannelOptions.html">ChannelOptions</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ChannelShouldQuiesceEvent.html">ChannelShouldQuiesceEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/CircularBuffer.html">CircularBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EventLoopIterator.html">EventLoopIterator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/EventLoopPromise.html">EventLoopPromise</a>
@@ -412,8 +424,8 @@ data is already available in the kernel&rsquo;s memory. In other words, a <code>
 reported as readable. This behaviour is also documented behaviour:</p>
 
 <ul>
-<li><a href="pubs.opengroup.org/onlinepubs/009695399/functions/poll.html"><code>poll</code></a>: <q>Regular files shall always poll TRUE for reading and writing.</q></li>
-<li><a href="man7.org/linux/man-pages/man7/epoll.7.html"><code>epoll</code></a>: <q>epoll is simply a faster poll(2), and can be used wherever the latter is used since it shares the same semantics.</q></li>
+<li><a href="http://pubs.opengroup.org/onlinepubs/009695399/functions/poll.html"><code>poll</code></a>: <q>Regular files shall always poll TRUE for reading and writing.</q></li>
+<li><a href="http://man7.org/linux/man-pages/man7/epoll.7.html"><code>epoll</code></a>: <q>epoll is simply a faster poll(2), and can be used wherever the latter is used since it shares the same semantics.</q></li>
 <li><a href="https://www.freebsd.org/cgi/man.cgi?query=kqueue&sektion=2"><code>kqueue</code></a>: <q>Returns when the file pointer is not at the end of file.</q></li>
 </ul>
 
@@ -982,6 +994,82 @@ case the <code><a href="../Structs/ByteBuffer.html">ByteBuffer</a></code> will c
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:3NIO17NonBlockingFileIOV5writeAA15EventLoopFutureCyytGAA0D6HandleC04fileJ0_AA10ByteBufferV6bufferAA0gH0_p05eventH0tF"></a>
+                    <a name="//apple_ref/swift/Method/write(fileHandle:buffer:eventLoop:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO17NonBlockingFileIOV5writeAA15EventLoopFutureCyytGAA0D6HandleC04fileJ0_AA10ByteBufferV6bufferAA0gH0_p05eventH0tF">write(fileHandle:buffer:eventLoop:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Write <code>buffer</code> to <code>fileHandle</code> in <code>NonBlockingFileIO</code>&lsquo;s private thread pool which is separate from any <code><a href="../Protocols/EventLoop.html">EventLoop</a></code> thread.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">write</span><span class="p">(</span><span class="nv">fileHandle</span><span class="p">:</span> <span class="kt"><a href="../Classes/FileHandle.html">FileHandle</a></span><span class="p">,</span>
+                  <span class="nv">buffer</span><span class="p">:</span> <span class="kt"><a href="../Structs/ByteBuffer.html">ByteBuffer</a></span><span class="p">,</span>
+                  <span class="nv">eventLoop</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventLoop.html">EventLoop</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/EventLoopFuture.html">EventLoopFuture</a></span><span class="o">&lt;</span><span class="p">()</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fileHandle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Classes/FileHandle.html">FileHandle</a></code> to write to.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>buffer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Structs/ByteBuffer.html">ByteBuffer</a></code> to write.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>eventLoop</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The <code><a href="../Protocols/EventLoop.html">EventLoop</a></code> to create the returned <code><a href="../Classes/EventLoopFuture.html">EventLoopFuture</a></code> from.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An <code><a href="../Classes/EventLoopFuture.html">EventLoopFuture</a></code> which is fulfilled if the write was successful or fails on error.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:3NIO17NonBlockingFileIOV04openD0AA15EventLoopFutureCyAA0D6HandleC_AA0D6RegionVtGSS4path_AA0gH0_p05eventH0tF"></a>
                     <a name="//apple_ref/swift/Method/openFile(path:eventLoop:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:3NIO17NonBlockingFileIOV04openD0AA15EventLoopFutureCyAA0D6HandleC_AA0D6RegionVtGSS4path_AA0gH0_p05eventH0tF">openFile(path:eventLoop:)</a>
@@ -995,7 +1083,7 @@ case the <code><a href="../Structs/ByteBuffer.html">ByteBuffer</a></code> will c
                         <p>Open the file at <code>path</code> on a private thread pool which is separate from any <code><a href="../Protocols/EventLoop.html">EventLoop</a></code> thread.</p>
 
 <p>This function will return (a future) of the <code><a href="../Classes/FileHandle.html">FileHandle</a></code> associated with the file opened and a <code><a href="../Structs/FileRegion.html">FileRegion</a></code>
-comprising of the whole file. The caller must close the returned <code><a href="../Classes/FileHandle.html">FileHandle</a></code> when its no longer needed.</p>
+comprising of the whole file. The caller must close the returned <code><a href="../Classes/FileHandle.html">FileHandle</a></code> when it&rsquo;s no longer needed.</p>
 <div class="aside aside-note">
     <p class="aside-title">Note</p>
     <p>The reason this returns the <code><a href="../Classes/FileHandle.html">FileHandle</a></code> and the <code><a href="../Structs/FileRegion.html">FileRegion</a></code> is that both the opening of a file as well as the querying of its size are blocking.</p>
@@ -1057,7 +1145,7 @@ comprising of the whole file. The caller must close the returned <code><a href="
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-07-03)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-01)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

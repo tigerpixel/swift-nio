@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           NIO Docs
         </a>
-         (89% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -100,6 +100,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/NIONetworkInterface.html">NIONetworkInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RepeatedTask.html">RepeatedTask</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ServerBootstrap.html">ServerBootstrap</a>
@@ -323,10 +326,19 @@
                 <a class="nav-group-task-link" href="../Structs/ByteBufferAllocator.html">ByteBufferAllocator</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ByteBufferView.html">ByteBufferView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/ChannelOptions.html">ChannelOptions</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ChannelShouldQuiesceEvent.html">ChannelShouldQuiesceEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/CircularBuffer.html">CircularBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EventLoopIterator.html">EventLoopIterator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/EventLoopPromise.html">EventLoopPromise</a>
@@ -405,7 +417,48 @@
 
                 </div>
               </div>
-            <p>Undocumented</p>
+            <p><code>EmbeddedChannel</code> is a <code><a href="../Protocols/Channel.html">Channel</a></code> implementation that does neither any
+actual IO nor has a proper eventing mechanism. The prime use-case for
+<code>EmbeddedChannel</code> is in unit tests when you want to feed the inbound events
+and check the outbound events manually.</p>
+
+<p>To feed events through an <code>EmbeddedChannel</code>&lsquo;s <code><a href="../Classes/ChannelPipeline.html">ChannelPipeline</a></code> use
+<code>EmbeddedChannel.writeInbound</code> which accepts data of any type. It will then
+forward that data through the <code><a href="../Classes/ChannelPipeline.html">ChannelPipeline</a></code> and the subsequent
+<code><a href="../Protocols/ChannelInboundHandler.html">ChannelInboundHandler</a></code> will receive it through the usual <code>channelRead</code>
+event. The user is responsible for making sure the first
+<code><a href="../Protocols/ChannelInboundHandler.html">ChannelInboundHandler</a></code> expects data of that type.</p>
+
+<p><code>EmbeddedChannel</code> automatically collects arriving outbound data and makes it
+available one-by-one through <code>readOutbound</code>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Due to <a href="https://github.com/apple/swift-nio/issues/243">#243</a>
+<code>EmbeddedChannel</code> expects outbound data to be of <code><a href="../Enums/IOData.html">IOData</a></code> type. This is an
+incorrect and unfortunate assumption that will be fixed with the next
+major NIO release when we can change the public API again. If you do need
+to collect outbound data that is not <code><a href="../Enums/IOData.html">IOData</a></code> you can create a custom
+<code><a href="../Protocols/ChannelOutboundHandler.html">ChannelOutboundHandler</a></code>, insert it at the very beginning of the
+<code><a href="../Classes/ChannelPipeline.html">ChannelPipeline</a></code> and collect the outbound data there. Just don&rsquo;t forward
+it using <code>ctx.write</code>.
+
+</div>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    <code>EmbeddedChannel</code> is currently only compatible with
+<code><a href="../Classes/EmbeddedEventLoop.html">EmbeddedEventLoop</a></code>s and cannot be used with <code>SelectableEventLoop</code>s from
+for example <code><a href="../Classes/MultiThreadedEventLoopGroup.html">MultiThreadedEventLoopGroup</a></code>.
+
+</div>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Unlike other <code><a href="../Protocols/Channel.html">Channel</a></code>s, <code>EmbeddedChannel</code> <strong>is not thread-safe</strong>. This
+is because it is intended to be run in the thread that instantiated it. Users are
+responsible for ensuring they never call into an <code>EmbeddedChannel</code> in an
+unsynchronized fashion. <code><a href="../Classes/EmbeddedEventLoop.html">EmbeddedEventLoop</a></code>s notes also apply as
+<code>EmbeddedChannel</code> uses an <code><a href="../Classes/EmbeddedEventLoop.html">EmbeddedEventLoop</a></code> as its <code><a href="../Protocols/EventLoop.html">EventLoop</a></code>.
+
+</div>
 
           </div>
         </section>
@@ -958,7 +1011,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-07-03)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-01)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

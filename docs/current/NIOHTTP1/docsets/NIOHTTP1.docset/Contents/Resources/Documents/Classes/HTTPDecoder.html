@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           NIOHTTP1 Docs
         </a>
-         (42% documented)
+         (44% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -108,6 +108,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/HTTPUpgradeEvents.html">HTTPUpgradeEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Enums/RemoveAfterUpgradeStrategy.html">RemoveAfterUpgradeStrategy</a>
               </li>
             </ul>
           </li>
@@ -201,6 +204,32 @@ the remote peer.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:3NIO14ChannelHandlerP14handlerRemovedyAA0bC7ContextC3ctx_tF"></a>
+                    <a name="//apple_ref/swift/Method/handlerRemoved(ctx:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14ChannelHandlerP14handlerRemovedyAA0bC7ContextC3ctx_tF">handlerRemoved(ctx:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">handlerRemoved</span><span class="p">(</span><span class="nv">ctx</span><span class="p">:</span> <span class="kt">ChannelHandlerContext</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:3NIO20ByteToMessageDecoderP12decoderAddedyAA21ChannelHandlerContextC3ctx_tF"></a>
                     <a name="//apple_ref/swift/Method/decoderAdded(ctx:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:3NIO20ByteToMessageDecoderP12decoderAddedyAA21ChannelHandlerContextC3ctx_tF">decoderAdded(ctx:)</a>
@@ -227,9 +256,9 @@ the remote peer.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:3NIO20ByteToMessageDecoderP14decoderRemovedyAA21ChannelHandlerContextC3ctx_tF"></a>
-                    <a name="//apple_ref/swift/Method/decoderRemoved(ctx:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3NIO20ByteToMessageDecoderP14decoderRemovedyAA21ChannelHandlerContextC3ctx_tF">decoderRemoved(ctx:)</a>
+                    <a name="/s:3NIO22_ChannelInboundHandlerP11channelReadyAA0bD7ContextC3ctx_AA6NIOAnyV4datatF"></a>
+                    <a name="//apple_ref/swift/Method/channelRead(ctx:data:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO22_ChannelInboundHandlerP11channelReadyAA0bD7ContextC3ctx_AA6NIOAnyV4datatF">channelRead(ctx:data:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -243,7 +272,7 @@ the remote peer.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">decoderRemoved</span><span class="p">(</span><span class="nv">ctx</span><span class="p">:</span> <span class="kt">ChannelHandlerContext</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">channelRead</span><span class="p">(</span><span class="nv">ctx</span><span class="p">:</span> <span class="kt">ChannelHandlerContext</span><span class="p">,</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">NIOAny</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -263,7 +292,7 @@ the remote peer.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This method should not be called and will be removed in the future</p>
 
                       </div>
                       <div class="declaration">
@@ -419,7 +448,7 @@ the remote peer.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-07-03)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-01)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           NIO Docs
         </a>
-         (89% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -100,6 +100,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/NIONetworkInterface.html">NIONetworkInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RepeatedTask.html">RepeatedTask</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ServerBootstrap.html">ServerBootstrap</a>
@@ -323,10 +326,19 @@
                 <a class="nav-group-task-link" href="../Structs/ByteBufferAllocator.html">ByteBufferAllocator</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ByteBufferView.html">ByteBufferView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/ChannelOptions.html">ChannelOptions</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ChannelShouldQuiesceEvent.html">ChannelShouldQuiesceEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/CircularBuffer.html">CircularBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EventLoopIterator.html">EventLoopIterator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/EventLoopPromise.html">EventLoopPromise</a>
@@ -417,6 +429,41 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:3NIO27MultiThreadedEventLoopGroupCACSi15numberOfThreads_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(numberOfThreads:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO27MultiThreadedEventLoopGroupCACSi15numberOfThreads_tcfc">init(numberOfThreads:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Creates a <code>MultiThreadedEventLoopGroup</code> instance which uses <code>numberOfThreads</code>.</p>
+
+<ul>
+<li>arguments:
+
+<ul>
+<li>numberOfThreads: The number of <code>Threads</code> to use.</li>
+</ul></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">numberOfThreads</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:3NIO27MultiThreadedEventLoopGroupCACSi10numThreads_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(numThreads:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:3NIO27MultiThreadedEventLoopGroupCACSi10numThreads_tcfc">init(numThreads:)</a>
@@ -442,7 +489,8 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">numThreads</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">@available(*, deprecated, renamed: "init(numberOfThreads:﹚")</span>
+<span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">numThreads</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -476,6 +524,42 @@
                       <div>
                         <h4>Return Value</h4>
                         <p>The current <code><a href="../Protocols/EventLoop.html">EventLoop</a></code> for the calling thread or <code>nil</code> if none is assigned to the thread.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO27MultiThreadedEventLoopGroupC12makeIteratorAA0deH0VSgyF"></a>
+                    <a name="//apple_ref/swift/Method/makeIterator()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO27MultiThreadedEventLoopGroupC12makeIteratorAA0deH0VSgyF">makeIterator()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns an <code><a href="../Structs/EventLoopIterator.html">EventLoopIterator</a></code> over the <code><a href="../Protocols/EventLoop.html">EventLoop</a></code>s in this <code>MultiThreadedEventLoopGroup</code>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    The return value of <code>makeIterator</code> is currently optional as requiring it would be SemVer major. From NIO 2.0.0 on it will return a non-optional iterator.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">makeIterator</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Structs/EventLoopIterator.html">EventLoopIterator</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p><code><a href="../Structs/EventLoopIterator.html">EventLoopIterator</a></code></p>
                       </div>
                     </section>
                   </div>
@@ -540,7 +624,7 @@
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-07-03)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-01)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

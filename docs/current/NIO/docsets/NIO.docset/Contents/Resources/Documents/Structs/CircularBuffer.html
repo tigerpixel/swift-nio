@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           NIO Docs
         </a>
-         (89% documented)
+         (90% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -100,6 +100,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/NIONetworkInterface.html">NIONetworkInterface</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RepeatedTask.html">RepeatedTask</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/ServerBootstrap.html">ServerBootstrap</a>
@@ -323,10 +326,19 @@
                 <a class="nav-group-task-link" href="../Structs/ByteBufferAllocator.html">ByteBufferAllocator</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ByteBufferView.html">ByteBufferView</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/ChannelOptions.html">ChannelOptions</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/ChannelShouldQuiesceEvent.html">ChannelShouldQuiesceEvent</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/CircularBuffer.html">CircularBuffer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Structs/EventLoopIterator.html">EventLoopIterator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/EventLoopPromise.html">EventLoopPromise</a>
@@ -447,6 +459,33 @@ the buffer. When the ring grows to more than <code>initialRingCapacity</code> el
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:3NIO14CircularBufferVACyxGycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14CircularBufferVACyxGycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allocates an empty buffer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:3NIO14CircularBufferV6appendyxF"></a>
                     <a name="//apple_ref/swift/Method/append(_:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:3NIO14CircularBufferV6appendyxF">append(_:)</a>
@@ -502,122 +541,6 @@ the buffer. When the ring grows to more than <code>initialRingCapacity</code> el
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:3NIO14CircularBufferV11removeFirstxyF"></a>
-                    <a name="//apple_ref/swift/Method/removeFirst()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3NIO14CircularBufferV11removeFirstxyF">removeFirst()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Remove the front element of the ring buffer.</p>
-
-<p><em>O(1)</em></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">removeFirst</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">E</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:3NIO14CircularBufferV5firstxSgv"></a>
-                    <a name="//apple_ref/swift/Property/first" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3NIO14CircularBufferV5firstxSgv">first</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Return the first element of the ring.</p>
-
-<p><em>O(1)</em></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">first</span><span class="p">:</span> <span class="kt">E</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:3NIO14CircularBufferV10removeLastxyF"></a>
-                    <a name="//apple_ref/swift/Method/removeLast()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3NIO14CircularBufferV10removeLastxyF">removeLast()</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Remove the last element of the ring buffer.</p>
-
-<p><em>O(1)</em></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">removeLast</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">E</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:3NIO14CircularBufferV4lastxSgv"></a>
-                    <a name="//apple_ref/swift/Property/last" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3NIO14CircularBufferV4lastxSgv">last</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Return the last element of the ring.</p>
-
-<p><em>O(1)</em></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">last</span><span class="p">:</span> <span class="kt">E</span><span class="p">?</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -652,35 +575,6 @@ the buffer. When the ring grows to more than <code>initialRingCapacity</code> el
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">index</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">E</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:3NIO14CircularBufferV9subscripts5SliceVyACyxGGs5RangeVySiGci"></a>
-                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3NIO14CircularBufferV9subscripts5SliceVyACyxGGs5RangeVySiGci">subscript(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Slice out a range of the ring.</p>
-
-<p><em>O(1)</em></p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">bounds</span><span class="p">:</span> <span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Slice</span><span class="o">&lt;</span><span class="kt">CircularBuffer</span><span class="o">&lt;</span><span class="kt">E</span><span class="o">&gt;&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
 
                         </div>
                       </div>
@@ -771,6 +665,33 @@ the buffer. When the ring grows to more than <code>initialRingCapacity</code> el
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:3NIO14CircularBufferV8capacitySiv"></a>
+                    <a name="//apple_ref/swift/Property/capacity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14CircularBufferV8capacitySiv">capacity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The total number of elements that the ring can contain without allocating new storage.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">capacity</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:3NIO14CircularBufferV10startIndexSiv"></a>
                     <a name="//apple_ref/swift/Property/startIndex" class="dashAnchor"></a>
                     <a class="token" href="#/s:3NIO14CircularBufferV10startIndexSiv">startIndex</a>
@@ -849,6 +770,60 @@ the buffer. When the ring grows to more than <code>initialRingCapacity</code> el
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO14CircularBufferV5indexS2i6before_tF"></a>
+                    <a name="//apple_ref/swift/Method/index(before:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14CircularBufferV5indexS2i6before_tF">index(before:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the index before <code>index</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">index</span><span class="p">(</span><span class="nv">before</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO14CircularBufferV9removeAllySb15keepingCapacity_tF"></a>
+                    <a name="//apple_ref/swift/Method/removeAll(keepingCapacity:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14CircularBufferV9removeAllySb15keepingCapacity_tF">removeAll(keepingCapacity:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes all members from the circular buffer whist keeping the capacity.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">removeAll</span><span class="p">(</span><span class="nv">keepingCapacity</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -889,13 +864,228 @@ the buffer. When the ring grows to more than <code>initialRingCapacity</code> el
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/BidirectionalCollection,%20RandomAccessCollection,%20RangeReplaceableCollection"></a>
+                <a name="//apple_ref/swift/Section/BidirectionalCollection, RandomAccessCollection, RangeReplaceableCollection" class="dashAnchor"></a>
+                <a href="#/BidirectionalCollection,%20RandomAccessCollection,%20RangeReplaceableCollection">
+                  <h3 class="section-name">BidirectionalCollection, RandomAccessCollection, RangeReplaceableCollection</h3>
+                </a>
+              </div>
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO14CircularBufferV15replaceSubrangeys5RangeVySiG_qd__4witht7ElementQyd__Rszs10CollectionRd__lF"></a>
+                    <a name="//apple_ref/swift/Method/replaceSubrange(_:with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14CircularBufferV15replaceSubrangeys5RangeVySiG_qd__4witht7ElementQyd__Rszs10CollectionRd__lF">replaceSubrange(_:with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Replaces the specified subrange of elements with the given collection.</p>
+
+<p><em>O(n)</em> where <em>n</em> is the length of the new elements collection if the subrange equals to <em>n</em></p>
+
+<p><em>O(m)</em> where <em>m</em> is the combined length of the collection and <em>newElements</em></p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="n">replaceSubrange</span><span class="o">&lt;</span><span class="kt">C</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">subrange</span><span class="p">:</span> <span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Index</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">with</span> <span class="nv">newElements</span><span class="p">:</span> <span class="kt">C</span><span class="p">)</span> <span class="k">where</span> <span class="kt">E</span> <span class="o">==</span> <span class="kt">C</span><span class="o">.</span><span class="kt">Element</span><span class="p">,</span> <span class="kt">C</span> <span class="p">:</span> <span class="kt">Collection</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>subrange</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The subrange of the collection to replace. The bounds of the range must be valid indices of the collection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>newElements</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The new elements to add to the collection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO14CircularBufferV14removeSubrangeys5RangeVySiGF"></a>
+                    <a name="//apple_ref/swift/Method/removeSubrange(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14CircularBufferV14removeSubrangeys5RangeVySiGF">removeSubrange(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes the elements in the specified subrange from the circular buffer.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">removeSubrange</span><span class="p">(</span><span class="n">_</span> <span class="nv">bounds</span><span class="p">:</span> <span class="kt">Range</span><span class="o">&lt;</span><span class="kt">Int</span><span class="o">&gt;</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bounds</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The range of the circular buffer to be removed. The bounds of the range must be valid indices of the collection.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO14CircularBufferV10removeLastySiF"></a>
+                    <a name="//apple_ref/swift/Method/removeLast(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14CircularBufferV10removeLastySiF">removeLast(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes the given number of elements from the end of the collection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">removeLast</span><span class="p">(</span><span class="n">_</span> <span class="nv">n</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>n</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The number of elements to remove from the tail of the buffer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO14CircularBufferV6removexSi2at_tF"></a>
+                    <a name="//apple_ref/swift/Method/remove(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO14CircularBufferV6removexSi2at_tF">remove(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Removes &amp; returns the item at <code>position</code> from the buffer</p>
+
+<p><em>O(1)</em> if the position is <code>headIdx</code> or <code>tailIdx</code>.
+otherwise
+<em>O(n)</em> where <em>n</em> is the number of elements between <code>position</code> and <code>tailIdx</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">mutating</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="n">at</span> <span class="nv">position</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">E</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>position</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index of the item to be removed from the buffer.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </div>
         </section>
 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-07-03)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-01)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
