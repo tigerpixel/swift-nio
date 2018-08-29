@@ -495,6 +495,8 @@ be preferred to running blocking file IO system calls directly on
         <span class="o">.</span><span class="n">childChannelInitializer</span> <span class="p">{</span> <span class="n">channel</span> <span class="k">in</span>
             <span class="c1">// Ensure we don't read faster then we can write by adding the BackPressureHandler into the pipeline.</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="kt">BackPressureHandler</span><span class="p">())</span><span class="o">.</span><span class="n">then</span> <span class="p">{</span> <span class="p">()</span> <span class="k">in</span>
+                <span class="c1">// make sure to instantiate your `ChannelHandlers` inside of</span>
+                <span class="c1">// the closure as it will be invoked once per connection.</span>
                 <span class="n">channel</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="kt">MyChannelHandler</span><span class="p">())</span>
             <span class="p">}</span>
         <span class="p">}</span>
@@ -557,6 +559,9 @@ This way you ensure that the same <code><a href="Protocols/EventLoop.html">Event
         <span class="c1">// Enable SO_REUSEADDR.</span>
         <span class="o">.</span><span class="nf">channelOption</span><span class="p">(</span><span class="kt">ChannelOptions</span><span class="o">.</span><span class="nf">socket</span><span class="p">(</span><span class="kt">SocketOptionLevel</span><span class="p">(</span><span class="kt">SOL_SOCKET</span><span class="p">),</span> <span class="kt">SO_REUSEADDR</span><span class="p">),</span> <span class="nv">value</span><span class="p">:</span> <span class="mi">1</span><span class="p">)</span>
         <span class="o">.</span><span class="n">channelInitializer</span> <span class="p">{</span> <span class="n">channel</span> <span class="k">in</span>
+            <span class="c1">// always instantiate the handler _within_ the closure as</span>
+            <span class="c1">// it may be called multiple times (for example if the hostname</span>
+            <span class="c1">// resolves to both IPv4 and IPv6 addresses, cf. Happy Eyeballs).</span>
             <span class="n">channel</span><span class="o">.</span><span class="n">pipeline</span><span class="o">.</span><span class="nf">add</span><span class="p">(</span><span class="nv">handler</span><span class="p">:</span> <span class="kt">MyChannelHandler</span><span class="p">())</span>
         <span class="p">}</span>
     <span class="k">defer</span> <span class="p">{</span>
@@ -1068,6 +1073,25 @@ unsynchronized fashion. <code><a href="Classes/EmbeddedEventLoop.html">EmbeddedE
                       <div class="abstract">
                         <p>An <code><a href="Protocols/EventLoopGroup.html">EventLoopGroup</a></code> which will create multiple <code><a href="Protocols/EventLoop.html">EventLoop</a></code>s, each tied to its own <code>Thread</code>.</p>
 
+<p>The effect of initializing a <code>MultiThreadedEventLoopGroup</code> is to spawn <code>numberOfThreads</code> fresh threads which will
+all run their own <code><a href="Protocols/EventLoop.html">EventLoop</a></code>. Those threads will not be shut down until <code>shutdownGracefully</code> or
+<code>syncShutdownGracefully</code> is called.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    It&rsquo;s good style to call <code>MultiThreadedEventLoopGroup.shutdownGracefully</code> or
+    <code>MultiThreadedEventLoopGroup.syncShutdownGracefully</code> when you no longer need this <code><a href="Protocols/EventLoopGroup.html">EventLoopGroup</a></code>. In
+    many cases that is just before your program exits.
+
+</div>
+<div class="aside aside-warning">
+    <p class="aside-title">Warning</p>
+    Unit tests often spawn one <code>MultiThreadedEventLoopGroup</code> per unit test to force isolation between the
+       tests. In those cases it&rsquo;s important to shut the <code>MultiThreadedEventLoopGroup</code> down at the end of the
+       test. A good place to start a <code>MultiThreadedEventLoopGroup</code> is the <code>setUp</code> method of your <code>XCTestCase</code>
+       subclass, a good place to shut it down is the <code>tearDown</code> method.
+
+</div>
+
                         <a href="Classes/MultiThreadedEventLoopGroup.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
@@ -1322,7 +1346,7 @@ needed you must <code>close</code> it or take back ownership of the file descrip
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-10)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-08-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
