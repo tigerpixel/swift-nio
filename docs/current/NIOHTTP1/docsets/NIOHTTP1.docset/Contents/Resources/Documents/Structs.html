@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           NIOHTTP1 Docs
         </a>
-         (44% documented)
+         (46% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -137,10 +137,19 @@
             <a class="nav-group-name-link" href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:8NIOHTTP110HTTPHeaderV">HTTPHeader</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs.html#/s:8NIOHTTP115HTTPHeaderIndexV">HTTPHeaderIndex</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/HTTPHeaders.html">HTTPHeaders</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/HTTPHeaders/Iterator.html">– Iterator</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Structs/HTTPListHeaderIterator.html">HTTPListHeaderIterator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Structs/HTTPRequestHead.html">HTTPRequestHead</a>
@@ -192,6 +201,46 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:8NIOHTTP122HTTPListHeaderIteratorV"></a>
+                    <a name="//apple_ref/swift/Struct/HTTPListHeaderIterator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8NIOHTTP122HTTPListHeaderIteratorV">HTTPListHeaderIterator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An <code>IteratorProtocol</code> that can iterate through comma separated list of values for a certain
+header.</p>
+
+<p><strong>Example:</strong></p>
+
+<p>Suppose you have these headers:</p>
+<pre class="highlight swift"><code> <span class="kt">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span><span class="p">,</span> <span class="n">x</span><span class="o">-</span><span class="n">server</span>
+ <span class="kt">Content</span><span class="o">-</span><span class="k">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span>
+ <span class="kt">Connection</span><span class="p">:</span> <span class="n">other</span>
+</code></pre>
+
+<p>You can iterate using this struct on those headers, for values of <code>Connection</code>, to get
+<code>keep-alive</code>, then <code>x-server</code>, then <code>other</code></p>
+
+                        <a href="Structs/HTTPListHeaderIterator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPListHeaderIterator</span> <span class="p">:</span> <span class="kt">Sequence</span><span class="p">,</span> <span class="kt">IteratorProtocol</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:8NIOHTTP115HTTPRequestHeadV"></a>
                     <a name="//apple_ref/swift/Struct/HTTPRequestHead" class="dashAnchor"></a>
                     <a class="token" href="#/s:8NIOHTTP115HTTPRequestHeadV">HTTPRequestHead</a>
@@ -239,6 +288,72 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPResponseHead</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8NIOHTTP115HTTPHeaderIndexV"></a>
+                    <a name="//apple_ref/swift/Struct/HTTPHeaderIndex" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8NIOHTTP115HTTPHeaderIndexV">HTTPHeaderIndex</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Index for a header name or value that points into the underlying <code>ByteBuffer</code>.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This is public to aid in the creation of supplemental HTTP libraries, e.g.
+    NIOHTTP2 and NIOHPACK. It is not intended for general use.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPHeaderIndex</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:8NIOHTTP110HTTPHeaderV"></a>
+                    <a name="//apple_ref/swift/Struct/HTTPHeader" class="dashAnchor"></a>
+                    <a class="token" href="#/s:8NIOHTTP110HTTPHeaderV">HTTPHeader</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Struct which holds name, value pairs.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This is public to aid in the creation of supplemental HTTP libraries, e.g.
+    NIOHTTP2 and NIOHPACK. It is not intended for general use.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">HTTPHeader</span></code></pre>
 
                         </div>
                       </div>
@@ -320,7 +435,7 @@ can be represented appropriately.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-09-12)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-10-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>

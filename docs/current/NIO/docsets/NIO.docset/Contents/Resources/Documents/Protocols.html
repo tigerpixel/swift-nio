@@ -23,7 +23,7 @@
         <a class="header-link" href="index.html">
           NIO Docs
         </a>
-         (90% documented)
+         (89% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -164,6 +164,9 @@
                 <a class="nav-group-task-link" href="Enums/MaxMessagesPerReadOption.html">MaxMessagesPerReadOption</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Enums/MulticastError.html">MulticastError</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Enums/RecvAllocatorOption.html">RecvAllocatorOption</a>
               </li>
               <li class="nav-group-task">
@@ -199,6 +202,12 @@
             <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/BaseSocketChannel.html">BaseSocketChannel</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/DatagramChannel.html">DatagramChannel</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/EmbeddedScheduledTask.html">EmbeddedScheduledTask</a>
               </li>
               <li class="nav-group-task">
@@ -230,6 +239,9 @@
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/UnsafeBufferPointer.html">UnsafeBufferPointer</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Extensions/UnsafeMutableBufferPointer.html">UnsafeMutableBufferPointer</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Extensions/UnsafeMutableRawBufferPointer.html">UnsafeMutableRawBufferPointer</a>
@@ -294,10 +306,16 @@
                 <a class="nav-group-task-link" href="Protocols/MessageToByteEncoder.html">MessageToByteEncoder</a>
               </li>
               <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/MulticastChannel.html">MulticastChannel</a>
+              </li>
+              <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/RecvByteBufferAllocator.html">RecvByteBufferAllocator</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/Resolver.html">Resolver</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="Protocols/SocketOptionProvider.html">SocketOptionProvider</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="Protocols/_ChannelInboundHandler.html">_ChannelInboundHandler</a>
@@ -418,38 +436,6 @@
 
         <section class="section">
           <div class="section-content">
-            <div class="task-group">
-              <ul class="item-container">
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:3NIO20ContiguousCollectionP"></a>
-                    <a name="//apple_ref/swift/Protocol/ContiguousCollection" class="dashAnchor"></a>
-                    <a class="token" href="#/s:3NIO20ContiguousCollectionP">ContiguousCollection</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>A <code>Collection</code> that is contiguously layed out in memory and can therefore be duplicated using <code>memcpy</code>.</p>
-
-                        <a href="Protocols/ContiguousCollection.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ContiguousCollection</span> <span class="p">:</span> <span class="kt">Collection</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
             <div class="task-group">
               <ul class="item-container">
                 <li class="item">
@@ -873,6 +859,38 @@ to recall where a byte is relative to the <code>readerIndex</code>, use an offse
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:3NIO20ContiguousCollectionP"></a>
+                    <a name="//apple_ref/swift/Protocol/ContiguousCollection" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO20ContiguousCollectionP">ContiguousCollection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>Collection</code> that is contiguously laid out in memory and can therefore be duplicated using <code>memcpy</code>.</p>
+
+                        <a href="Protocols/ContiguousCollection.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">ContiguousCollection</span> <span class="p">:</span> <span class="kt">Collection</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:3NIO9EventLoopP"></a>
                     <a name="//apple_ref/swift/Protocol/EventLoop" class="dashAnchor"></a>
                     <a class="token" href="#/s:3NIO9EventLoopP">EventLoop</a>
@@ -988,6 +1006,44 @@ effect as blocking in this case.</p>
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:3NIO16MulticastChannelP"></a>
+                    <a name="//apple_ref/swift/Protocol/MulticastChannel" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO16MulticastChannelP">MulticastChannel</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A <code>MulticastChannel</code> is a <code><a href="Protocols/Channel.html">Channel</a></code> that supports IP multicast operations: that is, a channel that can join multicast
+groups.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    As with <code><a href="Protocols/Channel.html">Channel</a></code>, all operations on a <code>MulticastChannel</code> are thread-safe.
+
+</div>
+
+                        <a href="Protocols/MulticastChannel.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">MulticastChannel</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Channel.html">Channel</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:3NIO23RecvByteBufferAllocatorP"></a>
                     <a name="//apple_ref/swift/Protocol/RecvByteBufferAllocator" class="dashAnchor"></a>
                     <a class="token" href="#/s:3NIO23RecvByteBufferAllocatorP">RecvByteBufferAllocator</a>
@@ -1046,6 +1102,66 @@ resolver will need also to implement these sorting rules.</p>
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Resolver</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul class="item-container">
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO20SocketOptionProviderP"></a>
+                    <a name="//apple_ref/swift/Protocol/SocketOptionProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO20SocketOptionProviderP">SocketOptionProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This protocol defines an object, most commonly a <code><a href="Protocols/Channel.html">Channel</a></code>, that supports
+setting and getting socket options (via <code>setsockopt</code>/<code>getsockopt</code> or similar).
+It provides a strongly typed API that makes working with larger, less-common
+socket options easier than the <code><a href="Protocols/ChannelOption.html">ChannelOption</a></code> API allows.</p>
+
+<p>The API is divided into two portions. For socket options that NIO has prior
+knowledge about, the API has strongly and safely typed APIs that only allow
+users to use the exact correct type for the socket option. This will ensure
+that the API is safe to use, and these are encouraged where possible.</p>
+
+<p>These safe APIs are built on top of an <q>unsafe</q> API that is also exposed to
+users as part of this protocol. The <q>unsafe</q> API is unsafe in the same way
+that <code>UnsafePointer</code> is: incorrect use of the API allows all kinds of
+memory-unsafe behaviour. This API is necessary for socket options that NIO
+does not have prior knowledge of, but wherever possible users are discouraged
+from using it.</p>
+<h3 id='relationship-to-socketoption' class='heading'>Relationship to SocketOption</h3>
+
+<p>All <code><a href="Protocols/Channel.html">Channel</a></code> objects that implement this protocol should also support the
+<code><a href="Enums/SocketOption.html">SocketOption</a></code> <code><a href="Protocols/ChannelOption.html">ChannelOption</a></code> for simple socket options (those with C <code>int</code>
+values). These are the most common socket option types, and so this <code><a href="Protocols/ChannelOption.html">ChannelOption</a></code>
+represents a convenient shorthand for using this protocol where the type allows,
+as well as avoiding the need to cast to this protocol.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    Like the <code><a href="Protocols/Channel.html">Channel</a></code> protocol, all methods in this protocol are
+thread-safe.
+
+</div>
+
+                        <a href="Protocols/SocketOptionProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">SocketOptionProvider</span></code></pre>
 
                         </div>
                       </div>
@@ -1154,7 +1270,7 @@ resolver will need also to implement these sorting rules.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-09-12)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-10-29)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
