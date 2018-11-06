@@ -605,6 +605,41 @@ effect as blocking in this case.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO9EventLoopP014preconditionInbC0ys12StaticStringV4file_Su4linetF"></a>
+                    <a name="//apple_ref/swift/Method/preconditionInEventLoop(file:line:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO9EventLoopP014preconditionInbC0ys12StaticStringV4file_Su4linetF">preconditionInEventLoop(file:line:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Default implementation
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checks that this call is run from the <code>EventLoop</code>. If this is called from within the <code>EventLoop</code> this function
+will have no effect, if called from outside the <code>EventLoop</code> it will crash the process with a trap.</p>
+
+                      </div>
+                      <h4>Default Implementation</h4>
+                      <div class="default_impl abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">preconditionInEventLoop</span><span class="p">(</span><span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
             <div class="task-group">
@@ -999,6 +1034,44 @@ effect as blocking in this case.</p>
                     </section>
                   </div>
                 </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:3NIO9EventLoopPAAE08assertInbC0ys12StaticStringV4file_Su4linetF"></a>
+                    <a name="//apple_ref/swift/Method/assertInEventLoop(file:line:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:3NIO9EventLoopPAAE08assertInbC0ys12StaticStringV4file_Su4linetF">assertInEventLoop(file:line:)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Checks that this call is run from the EventLoop. If this is called from within the EventLoop this function will
+have no effect, if called from outside the EventLoop it will crash the process with a trap if run in debug mode.
+In release mode this function never has any effect.</p>
+<div class="aside aside-note">
+    <p class="aside-title">Note</p>
+    This is not a customization point so calls to this function can be fully optimized out in release mode.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@_inlineable</span>
+<span class="kd">public</span> <span class="kd">func</span> <span class="nf">assertInEventLoop</span><span class="p">(</span><span class="nv">file</span><span class="p">:</span> <span class="kt">StaticString</span> <span class="o">=</span> <span class="kd">#file</span><span class="p">,</span> <span class="nv">line</span><span class="p">:</span> <span class="kt">UInt</span> <span class="o">=</span> <span class="kd">#line</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -1007,7 +1080,7 @@ effect as blocking in this case.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-10-29)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-11-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
