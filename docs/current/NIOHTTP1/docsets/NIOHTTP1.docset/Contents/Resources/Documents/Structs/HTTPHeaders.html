@@ -23,7 +23,7 @@
         <a class="header-link" href="../index.html">
           NIOHTTP1 Docs
         </a>
-         (46% documented)
+         (45% documented)
       </p>
     
       <p class="header-col--secondary">
@@ -137,10 +137,10 @@
             <a class="nav-group-name-link" href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs.html#/s:8NIOHTTP110HTTPHeaderV">HTTPHeader</a>
+                <a class="nav-group-task-link" href="../Structs/HTTPHeader.html">HTTPHeader</a>
               </li>
               <li class="nav-group-task">
-                <a class="nav-group-task-link" href="../Structs.html#/s:8NIOHTTP115HTTPHeaderIndexV">HTTPHeaderIndex</a>
+                <a class="nav-group-task-link" href="../Structs/HTTPHeaderIndex.html">HTTPHeaderIndex</a>
               </li>
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/HTTPHeaders.html">HTTPHeaders</a>
@@ -269,7 +269,7 @@ name/value pair within the block.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createHeaderBlock</span><span class="p">(</span><span class="nv">buffer</span><span class="p">:</span> <span class="kt">ByteBuffer</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:8NIOHTTP110HTTPHeaderV">HTTPHeader</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">HTTPHeaders</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">createHeaderBlock</span><span class="p">(</span><span class="nv">buffer</span><span class="p">:</span> <span class="kt">ByteBuffer</span><span class="p">,</span> <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/HTTPHeader.html">HTTPHeader</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kt">HTTPHeaders</span></code></pre>
 
                         </div>
                       </div>
@@ -338,7 +338,7 @@ NIOHTTP2 and NIOHPACK. It is not intended for general use.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">withUnsafeBufferAndIndices</span><span class="o">&lt;</span><span class="kt">R</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">block</span><span class="p">:</span> <span class="p">(</span><span class="n">_</span> <span class="nv">buf</span><span class="p">:</span> <span class="kt">ByteBuffer</span><span class="p">,</span> <span class="n">_</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:8NIOHTTP110HTTPHeaderV">HTTPHeader</a></span><span class="p">],</span> <span class="n">_</span> <span class="nv">contiguous</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">R</span><span class="p">)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="kt">R</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">withUnsafeBufferAndIndices</span><span class="o">&lt;</span><span class="kt">R</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">block</span><span class="p">:</span> <span class="p">(</span><span class="n">_</span> <span class="nv">buf</span><span class="p">:</span> <span class="kt">ByteBuffer</span><span class="p">,</span> <span class="n">_</span> <span class="nv">locations</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/HTTPHeader.html">HTTPHeader</a></span><span class="p">],</span> <span class="n">_</span> <span class="nv">contiguous</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span> <span class="k">throws</span> <span class="o">-&gt;</span> <span class="kt">R</span><span class="p">)</span> <span class="k">rethrows</span> <span class="o">-&gt;</span> <span class="kt">R</span></code></pre>
 
                         </div>
                       </div>
@@ -379,7 +379,7 @@ NIOHTTP2 and NIOHPACK. It is not intended for general use.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>An array of <code><a href="../Structs.html#/s:8NIOHTTP110HTTPHeaderV">HTTPHeader</a></code>s, each of which contains information on the location in
+                                  <p>An array of <code><a href="../Structs/HTTPHeader.html">HTTPHeader</a></code>s, each of which contains information on the location in
         the buffer of both a header&rsquo;s name and value.</p>
                                 </div>
                               </td>
@@ -859,7 +859,7 @@ means that <code>name</code> is not guaranteed to be unique in a given block of 
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-11-06)</p>
+      <p>&copy; 2018 <a class="link" href="https://github.com/apple/swift-nio" target="_blank" rel="external">SwiftNIO Team</a>. All rights reserved. (Last updated: 2018-12-06)</p>
       <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.3</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
