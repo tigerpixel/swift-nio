@@ -17,62 +17,62 @@ print("Please enter line to send to the server")
 let line = readLine(strippingNewline: true)!
 
 private final class EchoHandler: ChannelInboundHandler {
-   public typealias InboundIn = AddressedEnvelope<ByteBuffer>
-   public typealias OutboundOut = AddressedEnvelope<ByteBuffer>
-   private var numBytes = 0
-   
-   private let remoteAddressInitializer: () throws -> SocketAddress
-   
-   init(remoteAddressInitializer: @escaping () throws -> SocketAddress) {
-       self.remoteAddressInitializer = remoteAddressInitializer
-   }
-
-   public func channelRead(context: ChannelHandlerContext, data: NIOAny) {
-       let envelope = self.unwrapInboundIn(data)
-       var byteBuffer = envelope.data
-
-       self.numBytes -= byteBuffer.readableBytes
-
-       if self.numBytes <= 0 {
-           if let string = byteBuffer.readString(length: byteBuffer.readableBytes) {
-               print("Received: '\(string)' back from the server, closing channel.")
-           } else {
-               print("Received the line back from the server, closing channel.")
-           }
-           context.close(promise: nil)
-       }
-   }
-   
-   public func errorCaught(context: ChannelHandlerContext, error: Error) {
-       print("error: ", error)
-       
-       // As we are not really interested getting notified on success or failure we just pass nil as promise to
-       // reduce allocations.
-       context.close(promise: nil)
-   }
-   
-   public func channelActive(context: ChannelHandlerContext) {
-       
-       do {
-           // Channel is available. It's time to send the message to the server to initialize the ping-pong sequence.
-
-           // Get the server address.
-           let remoteAddress = try self.remoteAddressInitializer()
-           
-           // Set the transmission data.
-           var buffer = context.channel.allocator.buffer(capacity: line.utf8.count)
-           buffer.writeString(line)
-           self.numBytes = buffer.readableBytes
-           
-           // Forward the data.
-           let envolope = AddressedEnvelope<ByteBuffer>(remoteAddress: remoteAddress, data: buffer)
-           
-           context.writeAndFlush(self.wrapOutboundOut(envolope), promise: nil)
-           
-       } catch {
-           print("Could not resolve remote address")
-       }
-   }
+    public typealias InboundIn = AddressedEnvelope<ByteBuffer>
+    public typealias OutboundOut = AddressedEnvelope<ByteBuffer>
+    private var numBytes = 0
+    
+    private let remoteAddressInitializer: () throws -> SocketAddress
+    
+    init(remoteAddressInitializer: @escaping () throws -> SocketAddress) {
+        self.remoteAddressInitializer = remoteAddressInitializer
+    }
+    
+    public func channelActive(context: ChannelHandlerContext) {
+        
+        do {
+            // Channel is available. It's time to send the message to the server to initialize the ping-pong sequence.
+            
+            // Get the server address.
+            let remoteAddress = try self.remoteAddressInitializer()
+            
+            // Set the transmission data.
+            var buffer = context.channel.allocator.buffer(capacity: line.utf8.count)
+            buffer.writeString(line)
+            self.numBytes = buffer.readableBytes
+            
+            // Forward the data.
+            let envolope = AddressedEnvelope<ByteBuffer>(remoteAddress: remoteAddress, data: buffer)
+            
+            context.writeAndFlush(self.wrapOutboundOut(envolope), promise: nil)
+            
+        } catch {
+            print("Could not resolve remote address")
+        }
+    }
+    
+    public func channelRead(context: ChannelHandlerContext, data: NIOAny) {
+        let envelope = self.unwrapInboundIn(data)
+        var byteBuffer = envelope.data
+        
+        self.numBytes -= byteBuffer.readableBytes
+        
+        if self.numBytes <= 0 {
+            if let string = byteBuffer.readString(length: byteBuffer.readableBytes) {
+                print("Received: '\(string)' back from the server, closing channel.")
+            } else {
+                print("Received the line back from the server, closing channel.")
+            }
+            context.close(promise: nil)
+        }
+    }
+    
+    public func errorCaught(context: ChannelHandlerContext, error: Error) {
+        print("error: ", error)
+        
+        // As we are not really interested getting notified on success or failure we just pass nil as promise to
+        // reduce allocations.
+        context.close(promise: nil)
+    }
 }
 
 // First argument is the program path
